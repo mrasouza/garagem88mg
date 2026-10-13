@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garagem 88</title>
+<meta name="description" content="Garagem 88 Estética Automotiva em Patos de Minas: lavagem a seco, polimento, vitrificação, higienização interna e mais. Orçamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: coluna única de garagem à noite; logo no topo, botão de WhatsApp sempre à mão, serviços como ficha de oficina */
+:root{
+  --bg:#070707;
+  --surface:#121212;
+  --line:#262422;
+  --fg:#f2f0ec;
+  --muted:#a29d96;
+  --accent:#f5a011;
+  --accent-ink:#1a1206;
+  --ok:#5fcf80;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px;padding-block:0 120px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+header{padding-block:28px 8px;text-align:center}
+header img{width:min(100%,460px);mix-blend-mode:lighten;display:block;margin:0 auto}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font:600 14px/1 var(--body);color:var(--muted)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status.open i{background:var(--ok);box-shadow:0 0 0 4px rgba(95,207,128,.15)}
+.status.open b{color:var(--ok)}
+
+.lead{text-align:center;margin:22px auto 26px;max-width:30ch}
+.lead h1{font:700 clamp(34px,8vw,48px)/1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0 0 12px;text-wrap:balance}
+.lead h1 em{font-style:normal;color:var(--accent)}
+.lead p{color:var(--muted);margin:0}
+
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px 20px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font:700 20px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,filter .15s}
+.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.cta svg{width:22px;height:22px;flex:none}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.ghost{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:12px;border:1px solid var(--line);color:var(--fg);text-decoration:none;font:600 15px/1 var(--body);transition:border-color .15s}
+.ghost:hover{border-color:var(--accent)}
+.ghost svg{width:18px;height:18px;flex:none}
+
+section{margin-top:56px}
+.eyebrow{font:600 13px/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+h2{font:700 30px/1.05 var(--display);text-transform:uppercase;margin:0 0 18px;text-wrap:balance}
+
+.services{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.services li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.services h3{font:600 21px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.services p{margin:3px 0 0;color:var(--muted);font-size:14.5px}
+.services div{min-width:0}
+.ask{font:600 13px/1 var(--body);color:var(--accent);text-decoration:none;white-space:nowrap;padding:10px 12px;border:1px solid rgba(245,160,17,.35);border-radius:999px}
+.ask:hover{background:rgba(245,160,17,.1)}
+.note{color:var(--muted);font-size:14px;margin:14px 0 0}
+
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--fg);font-weight:600}
+.hours tr.today td:first-child::after{content:"hoje";margin-left:10px;font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:3px 6px;border-radius:4px;vertical-align:2px}
+
+.place{display:grid;gap:14px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.place address{font-style:normal;font-size:17px;line-height:1.45}
+.place .num{font:600 22px/1 var(--display);letter-spacing:.04em;user-select:all}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.row .ghost{flex:1 1 160px}
+
+footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
+
+.dock{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--bg) 35%);pointer-events:none}
+.dock .cta{max-width:680px;margin:0 auto;pointer-events:auto;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.dock[data-hide="1"]{opacity:0;transform:translateY(20px)}
+.dock{transition:opacity .2s,transform .2s}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <img src="data:image/webp;base64,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" alt="Garagem 88 Estética Automotiva" width="588" height="183">
+    <div class="status" id="status"><i></i><span>Patos de Minas, MG</span></div>
+  </header>
+
+  <div class="lead">
+    <h1>Seu carro com cara de <em>zero</em> de novo</h1>
+    <p>Lavagem a seco, polimento, vitrificação e higienização interna no bairro Novo Horizonte, em Patos de Minas.</p>
+  </div>
+
+  <a class="cta" id="cta-top" href="#" data-msg="Olá! Vim pelo site e quero um orçamento.">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+    Pedir orçamento no WhatsApp
+  </a>
+  <div class="links">
+    <a class="ghost" href="https://www.instagram.com/garagem88mg" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      Instagram
+    </a>
+    <a class="ghost" href="https://www.google.com/maps/search/?api=1&query=Garagem+88+Est%C3%A9tica+Automotiva+R.+Athayde+Jos%C3%A9+Lopes+88+Patos+de+Minas" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Como chegar
+    </a>
+  </div>
+
+  <section id="servicos">
+    <p class="eyebrow">Serviços</p>
+    <h2>O que a gente faz no seu carro</h2>
+    <ul class="services">
+      <li><div><h3>Lavagem a seco</h3><p>Limpeza completa da lataria sem desperdício de água.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de lavagem a seco.">Orçamento</a></li>
+      <li><div><h3>Aspiração interna</h3><p>Bancos, assoalho, porta-malas e cantinhos que o aspirador comum não alcança.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de aspiração interna.">Orçamento</a></li>
+      <li><div><h3>Enceramento</h3><p>Brilho e uma camada de proteção para a pintura.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de enceramento.">Orçamento</a></li>
+      <li><div><h3>Polimento</h3><p>Remove riscos leves e manchas e devolve o brilho da pintura.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de polimento.">Orçamento</a></li>
+      <li><div><h3>Vitrificação</h3><p>Proteção duradoura para a pintura, com brilho e mais facilidade na limpeza.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de vitrificação.">Orçamento</a></li>
+      <li><div><h3>Limpeza de carpetes</h3><p>Higienização dos carpetes e tapetes, tirando sujeira e odores.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de limpeza de carpetes.">Orçamento</a></li>
+      <li><div><h3>Couro e camurça</h3><p>Limpeza e cuidado de bancos e revestimentos sem ressecar o material.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de limpeza de couro e camurça.">Orçamento</a></li>
+      <li><div><h3>Pneus e rodas</h3><p>Rodas sem crosta de freio e pneus com acabamento renovado.</p></div><a class="ask" href="#" data-msg="Olá! Quero um orçamento de limpeza de pneus e rodas.">Orçamento</a></li>
+    </ul>
+    <p class="note">Os valores variam com o porte e o estado do veículo. Mande uma foto do carro pelo WhatsApp e receba o orçamento.</p>
+  </section>
+
+  <section id="horarios">
+    <p class="eyebrow">Horários</p>
+    <h2>Abertos todos os dias</h2>
+    <table class="hours" id="hours">
+      <tbody>
+        <tr data-d="1"><td>Segunda</td><td>07:00 às 18:00</td></tr>
+        <tr data-d="2"><td>Terça</td><td>07:00 às 18:00</td></tr>
+        <tr data-d="3"><td>Quarta</td><td>07:00 às 18:00</td></tr>
+        <tr data-d="4"><td>Quinta</td><td>07:00 às 18:00</td></tr>
+        <tr data-d="5"><td>Sexta</td><td>07:00 às 18:00</td></tr>
+        <tr data-d="6"><td>Sábado</td><td>07:00 às 16:00</td></tr>
+        <tr data-d="0"><td>Domingo</td><td>07:00 às 12:00</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="local">
+    <p class="eyebrow">Onde estamos</p>
+    <h2>Novo Horizonte, Patos de Minas</h2>
+    <div class="place">
+      <address>R. Athayde José Lopes, 88<br>Novo Horizonte, Patos de Minas, MG<br>CEP 38703-576</address>
+      <div><div class="num">(34) 98809-6368</div></div>
+      <div class="row">
+        <a class="ghost" href="https://www.google.com/maps/search/?api=1&query=Garagem+88+Est%C3%A9tica+Automotiva+R.+Athayde+Jos%C3%A9+Lopes+88+Patos+de+Minas" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="ghost" href="https://www.google.com/maps/search/?api=1&query=Garagem+88+Est%C3%A9tica+Automotiva+Patos+de+Minas" target="_blank" rel="noopener">Avaliar no Google</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Garagem 88 Estética Automotiva · Patos de Minas, MG</footer>
+</div>
+
+<div class="dock" id="dock">
+  <a class="cta" href="#" data-msg="Olá! Vim pelo site e quero um orçamento.">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3Z"/></svg>
+    Chamar no WhatsApp
+  </a>
+</div>
+
+<script>
+(function(){
+  var PHONE = "5534988096368";
+  document.querySelectorAll("[data-msg]").forEach(function(a){
+    a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(a.dataset.msg);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  // Horário de Brasília para destacar o dia e mostrar se está aberto
+  var hours = {0:[7,12],1:[7,18],2:[7,18],3:[7,18],4:[7,18],5:[7,18],6:[7,16]};
+  try{
+    var parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var get = function(t){var p=parts.find(function(x){return x.type===t});return p?p.value:""};
+    var day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(get("weekday"));
+    var h = parseInt(get("hour"),10)%24 + parseInt(get("minute"),10)/60;
+    var row = document.querySelector('#hours tr[data-d="'+day+'"]');
+    if(row) row.classList.add("today");
+    var s = document.getElementById("status"), span = s.querySelector("span");
+    var r = hours[day];
+    if(r && h>=r[0] && h<r[1]){
+      s.classList.add("open");
+      span.innerHTML = "<b>Aberto agora</b> até " + String(r[1]).padStart(2,"0") + ":00 · Patos de Minas";
+    }else{
+      span.textContent = "Fechado agora · abre às 07:00 · Patos de Minas";
+    }
+  }catch(e){}
+
+  // Esconde o botão fixo enquanto o botão principal está visível
+  var dock = document.getElementById("dock"), top = document.getElementById("cta-top");
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){dock.dataset.hide = es[0].isIntersecting ? "1" : "0"}).observe(top);
+  }
+})();
+</script>
+
+</body>
+</html>
