@@ -77,6 +77,13 @@ h2{font:700 30px/1.05 var(--display);text-transform:uppercase;margin:0 0 18px;te
 .place{display:grid;gap:14px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
 .place address{font-style:normal;font-size:17px;line-height:1.45}
 .place .num{font:600 22px/1 var(--display);letter-spacing:.04em;user-select:all}
+.map{position:relative;display:grid;place-items:center;aspect-ratio:16/10;min-height:220px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#0d0d0d;color:var(--fg);text-decoration:none;cursor:pointer}
+.map:not(.on){background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px;background-position:center}
+.map span{display:grid;justify-items:center;gap:6px;padding:14px 18px;border-radius:12px;background:rgba(7,7,7,.85);text-align:center;font:600 15px/1.2 var(--body);transition:transform .15s}
+.map span svg{width:30px;height:30px;color:var(--accent)}
+.map small{font:400 12px/1.3 var(--body);color:var(--muted);max-width:26ch}
+.map:hover span{transform:translateY(-2px)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .row{display:flex;flex-wrap:wrap;gap:10px}
 .row .ghost{flex:1 1 160px}
 
@@ -153,10 +160,17 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
     <p class="eyebrow">Onde estamos</p>
     <h2>Novo Horizonte, Patos de Minas</h2>
     <div class="place">
+      <a class="map" id="map" href="https://maps.google.com/?cid=8132468771688897415" target="_blank" rel="noopener" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.7320664359872!2d-46.49749579022797!3d-18.586114382447203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8b1602f64223%3A0x70dc55429b795b87!2sGaragem%2088%20Est%C3%A9tica%20Automotiva!5e0!3m2!1spt-BR!2sbr!4v1791986557217!5m2!1spt-BR!2sbr">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Ver no mapa
+          <small>O mapa é carregado do Google ao tocar aqui</small>
+        </span>
+      </a>
       <address>R. Athayde José Lopes, 88<br>Novo Horizonte, Patos de Minas, MG<br>CEP 38703-576</address>
       <div><div class="num">(34) 98809-6368</div></div>
       <div class="row">
-        <a class="ghost" href="https://www.google.com/maps/search/?api=1&query=Garagem+88+Est%C3%A9tica+Automotiva+R.+Athayde+Jos%C3%A9+Lopes+88+Patos+de+Minas" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <a class="ghost" href="https://maps.google.com/?cid=8132468771688897415" target="_blank" rel="noopener">Abrir no Google Maps</a>
         <a class="ghost" href="https://www.google.com/maps/search/?api=1&query=Garagem+88+Est%C3%A9tica+Automotiva+Patos+de+Minas" target="_blank" rel="noopener">Avaliar no Google</a>
       </div>
     </div>
@@ -198,6 +212,24 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
       span.textContent = "Fechado agora · abre às 07:00 · Patos de Minas";
     }
   }catch(e){}
+
+  // Mapa do Google carregado só quando o visitante pede (mais leve e sem cookies do Google antes disso)
+  var map = document.getElementById("map");
+  if(map){
+    map.addEventListener("click", function(ev){
+      ev.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = map.dataset.src;
+      f.title = "Mapa: Garagem 88 Estética Automotiva, R. Athayde José Lopes, 88, Patos de Minas";
+      f.loading = "lazy";
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      f.allowFullscreen = true;
+      var div = document.createElement("div");
+      div.className = "map on";
+      div.appendChild(f);
+      map.replaceWith(div);
+    }, {once:true});
+  }
 
   // Esconde o botão fixo enquanto o botão principal está visível
   var dock = document.getElementById("dock"), top = document.getElementById("cta-top");
