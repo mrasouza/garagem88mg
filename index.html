@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Garagem 88</title>
-<meta name="description" content="Garagem 88 Estética Automotiva em Patos de Minas: lavagem a seco, polimento, vitrificação, higienização interna e mais. Orçamento pelo WhatsApp.">
+<meta name="description" content="Garagem 88 Estética Automotiva em Patos de Minas: lavagem simples e detalhada, higienização interna, polimento, cera, vitrificação e busca e entrega do veículo. Orçamento pelo WhatsApp.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#070707">
@@ -60,11 +60,14 @@ section{margin-top:56px}
 h2{font:700 30px/1.05 var(--display);text-transform:uppercase;margin:0 0 18px;text-wrap:balance}
 
 .services{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.services li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.services li{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
 .services h3{font:600 21px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin:0}
 .services p{margin:3px 0 0;color:var(--muted);font-size:14.5px}
 .services div{min-width:0}
-.ask{font:600 13px/1 var(--body);color:var(--accent);text-decoration:none;white-space:nowrap;padding:10px 12px;border:1px solid rgba(255,122,0,.35);border-radius:999px}
+.services .incl{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:var(--fg)}
+.services .incl li{display:flex;align-items:center;gap:6px;padding:0;border:0}
+.services .incl li::before{content:"";width:9px;height:5px;border:solid var(--accent);border-width:0 0 2px 2px;transform:rotate(-45deg) translateY(-2px);flex:none}
+.ask{margin-top:2px;font:600 13px/1 var(--body);color:var(--accent);text-decoration:none;white-space:nowrap;padding:10px 12px;border:1px solid rgba(255,122,0,.35);border-radius:999px}
 .ask:hover{background:rgba(255,122,0,.1)}
 .note{color:var(--muted);font-size:14px;margin:14px 0 0}
 
@@ -106,7 +109,7 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
 
   <div class="lead">
     <h1>Seu carro com cara de <em>zero</em> de novo</h1>
-    <p>Lavagem a seco, polimento, vitrificação e higienização interna no bairro Novo Horizonte, em Patos de Minas.</p>
+    <p>Lavagem, higienização interna, polimento e vitrificação no bairro Novo Horizonte, em Patos de Minas. Buscamos e entregamos o seu carro.</p>
   </div>
 
   <a class="cta" id="cta-top" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-msg="Olá! Vim pelo site e quero um orçamento.">
@@ -128,14 +131,13 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
     <p class="eyebrow">Serviços</p>
     <h2>O que a gente faz no seu carro</h2>
     <ul class="services">
-      <li><div><h3>Lavagem a seco</h3><p>Limpeza completa da lataria sem desperdício de água.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20lavagem%20a%20seco." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de lavagem a seco.">Orçamento</a></li>
-      <li><div><h3>Aspiração interna</h3><p>Bancos, assoalho, porta-malas e cantinhos que o aspirador comum não alcança.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20aspira%C3%A7%C3%A3o%20interna." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de aspiração interna.">Orçamento</a></li>
-      <li><div><h3>Enceramento</h3><p>Brilho e uma camada de proteção para a pintura.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20enceramento." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de enceramento.">Orçamento</a></li>
-      <li><div><h3>Polimento</h3><p>Remove riscos leves e manchas e devolve o brilho da pintura.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20polimento." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de polimento.">Orçamento</a></li>
-      <li><div><h3>Vitrificação</h3><p>Proteção duradoura para a pintura, com brilho e mais facilidade na limpeza.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20vitrifica%C3%A7%C3%A3o." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de vitrificação.">Orçamento</a></li>
-      <li><div><h3>Limpeza de carpetes</h3><p>Higienização dos carpetes e tapetes, tirando sujeira e odores.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20limpeza%20de%20carpetes." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de limpeza de carpetes.">Orçamento</a></li>
-      <li><div><h3>Couro e camurça</h3><p>Limpeza e cuidado de bancos e revestimentos sem ressecar o material.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20limpeza%20de%20couro%20e%20camur%C3%A7a." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de limpeza de couro e camurça.">Orçamento</a></li>
-      <li><div><h3>Pneus e rodas</h3><p>Rodas sem crosta de freio e pneus com acabamento renovado.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20limpeza%20de%20pneus%20e%20rodas." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de limpeza de pneus e rodas.">Orçamento</a></li>
+      <li><div><h3>Lavagem simples</h3><p>Limpeza externa do dia a dia, para tirar a poeira e a sujeira e deixar o carro limpo e bem apresentado.</p><ul class="incl"><li>Lavagem da carroceria</li><li>Rodas e pneus</li><li>Secagem</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20lavagem%20simples." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de lavagem simples.">Orçamento</a></li>
+      <li><div><h3>Lavagem detalhada</h3><p>Remove sujeira e impurezas, deixando pintura, rodas, pneus e demais acabamentos limpos e renovados.</p><ul class="incl"><li>Lavagem de carroceria</li><li>Limpeza de rodas e pneus</li><li>Caixas de roda</li><li>Secagem e acabamento</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20lavagem%20detalhada." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de lavagem detalhada.">Orçamento</a></li>
+      <li><div><h3>Higienização interna</h3><p>Limpeza profunda do interior, removendo sujeiras, manchas e odores, para mais conforto e um ambiente mais saudável.</p><ul class="incl"><li>Bancos e carpetes</li><li>Painel e portas</li><li>Teto e forração</li><li>Detalhes e acabamentos</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o%20interna." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de higienização interna.">Orçamento</a></li>
+      <li><div><h3>Polimento</h3><p>Correção e renovação da pintura: remove riscos leves, manchas e imperfeições e devolve o brilho e o aspecto de novo.</p><ul class="incl"><li>Remove riscos superficiais</li><li>Renova o brilho da pintura</li><li>Melhora o aspecto do veículo</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20polimento." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de polimento.">Orçamento</a></li>
+      <li><div><h3>Aplicação de cera</h3><p>Forma uma camada de proteção na pintura, realçando o brilho e ajudando a preservar o veículo por mais tempo.</p><ul class="incl"><li>Mais brilho</li><li>Proteção contra raios UV</li><li>Facilita a limpeza</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20aplica%C3%A7%C3%A3o%20de%20cera." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de aplicação de cera.">Orçamento</a></li>
+      <li><div><h3>Vitrificação</h3><p>A proteção de maior durabilidade para a pintura: uma camada ultrarresistente contra agentes externos, que mantém o brilho por muito mais tempo.</p><ul class="incl"><li>Alta proteção</li><li>Repele água e sujeira</li><li>Brilho intenso e duradouro</li></ul></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20vitrifica%C3%A7%C3%A3o." target="_blank" rel="noopener" data-msg="Olá! Quero um orçamento de vitrificação.">Orçamento</a></li>
+      <li><div><h3>Busca e entrega do veículo</h3><p>Mais comodidade para você: buscamos o seu veículo e entregamos de volta com todo o cuidado. Consulte as condições.</p></div><a class="ask" href="https://wa.me/5534988096368?text=Ol%C3%A1%21%20Quero%20saber%20as%20condi%C3%A7%C3%B5es%20de%20busca%20e%20entrega%20do%20ve%C3%ADculo." target="_blank" rel="noopener" data-msg="Olá! Quero saber as condições de busca e entrega do veículo.">Consultar</a></li>
     </ul>
     <p class="note">Os valores variam com o porte e o estado do veículo. Mande uma foto do carro pelo WhatsApp e receba o orçamento.</p>
   </section>
